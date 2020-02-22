@@ -1,11 +1,32 @@
-import React from "react"
+import React from "react";
 
-const Form = () => {
-    return (
-        <form>
 
-        </form>
-    )
+class Form extends React.Component {
+    state = ""
+    handleSubmit = (e) =>{
+        e.preventDefault()
+        let input = document.querySelector("input")
+    this.setState({
+        state:input.value
+    })
+   let li = document.createElement("li")
+    li.innerText = input.value
+    let form = document.querySelector("form")
+    form.appendChild(li)
+
 }
 
-export default Form
+    render() {
+        return (
+        <div>
+        <form onSubmit= {this.handleSubmit}>
+
+            <input type="text" placeholder="Enter To-do">
+            </input>
+        </form>
+        </div>
+    );
+    }
+}
+
+export default Form;
