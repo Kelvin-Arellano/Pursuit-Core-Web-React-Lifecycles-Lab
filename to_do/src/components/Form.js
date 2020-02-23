@@ -2,7 +2,7 @@ import React from "react";
 
 
 class Form extends React.Component {
-    state = ""
+   
     handleSubmit = (e) =>{
         e.preventDefault()
         let input = document.querySelector("input")
@@ -16,14 +16,21 @@ class Form extends React.Component {
 
 }
 
+
+
+    
     render() {
         return (
         <div>
-        <form onSubmit= {this.handleSubmit}>
+        <form onSubmit= {this.handleSubmit} >
 
             <input type="text" placeholder="Enter To-do">
             </input>
+            <button onClick = {this.notify}>
+
+            </button>
         </form>
+        
         </div>
     );
     }
